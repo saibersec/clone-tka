@@ -95,153 +95,56 @@
     .download-btn:hover { background: #27ae60; color: #fff; }
     .download-btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
-    /* ── CHROME BROWSER FRAME ── */
-    .chrome-window {
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.18);
-      border: 1px solid #aaa;
-    }
-
-    /* Title bar: gradient abu Chrome */
-    .chrome-titlebar {
-      background: linear-gradient(180deg, #dee1e6 0%, #d0d3d9 100%);
-      padding: 6px 10px 0 10px;
+    /* Browser Frame */
+    .browser-bar {
+      background: #2d2d2d;
+      border-radius: 12px 12px 0 0;
+      padding: 8px 12px;
       display: flex;
-      flex-direction: column;
-      border-bottom: 1px solid #b0b3b8;
+      align-items: center;
+      gap: 8px;
     }
-
-    /* Tab strip */
-    .chrome-tabs {
+    .dots { display: flex; gap: 5px; }
+    .dot { width: 11px; height: 11px; border-radius: 50%; }
+    .dot-r { background: #ff5f57; }
+    .dot-y { background: #febc2e; }
+    .dot-g { background: #28c840; }
+    .url-bar {
+      flex: 1;
+      background: #404040;
+      border-radius: 5px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: #bbb;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .url-bar i { font-size: 12px; color: #888; }
+    .page-wrapper {
+      background: #f0f0f0;
+      border-radius: 0 0 12px 12px;
+      overflow: hidden;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+    .tab-bar {
+      background: #e0e0e0;
+      padding: 6px 12px 0;
       display: flex;
       align-items: flex-end;
-      gap: 0;
-      margin-bottom: 0;
     }
-    .chrome-tab {
-      background: #f1f3f4;
-      border-radius: 8px 8px 0 0;
-      padding: 6px 12px 6px 10px;
-      font-size: 12px;
-      color: #202124;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      min-width: 160px;
-      max-width: 220px;
-      border: 1px solid #c5c8cd;
-      border-bottom: none;
-      position: relative;
-      z-index: 2;
-    }
-    .chrome-tab .favicon {
-      width: 14px;
-      height: 14px;
-      flex-shrink: 0;
-    }
-    .chrome-tab .tab-title {
-      flex: 1;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .chrome-tab .tab-close {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      color: #5f6368;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-    .chrome-tab .tab-close:hover { background: #dadce0; }
-
-    /* Omnibar row */
-    .chrome-omnibar {
-      background: linear-gradient(180deg, #dee1e6 0%, #d0d3d9 100%);
-      padding: 5px 8px 7px 8px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    /* Nav buttons */
-    .chrome-nav-btn {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #5f6368;
-      font-size: 14px;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-    .chrome-nav-btn:hover { background: rgba(0,0,0,0.08); }
-    .chrome-nav-btn.disabled { color: #bbb; cursor: default; }
-    .chrome-nav-btn.disabled:hover { background: transparent; }
-
-    /* Address bar */
-    .chrome-address {
-      flex: 1;
-      background: #fff;
-      border-radius: 20px;
-      padding: 5px 12px;
-      font-size: 13px;
-      color: #202124;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      border: 1px solid #dfe1e5;
-      box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
-      cursor: text;
-    }
-    .chrome-address .lock-icon { color: #5f6368; font-size: 13px; flex-shrink: 0; }
-    .chrome-address .url-text { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #202124; }
-    .chrome-address .star-icon { color: #5f6368; font-size: 13px; flex-shrink: 0; }
-
-    /* Right controls */
-    .chrome-right-controls {
-      display: flex;
-      align-items: center;
-      gap: 2px;
-    }
-    .chrome-ctrl-btn {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #5f6368;
-      font-size: 14px;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-    .chrome-ctrl-btn:hover { background: rgba(0,0,0,0.08); }
-    .chrome-avatar {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: #4285f4;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 11px;
-      font-weight: 700;
-      flex-shrink: 0;
-      cursor: pointer;
-    }
-
-    /* Page content area */
-    .chrome-page {
+    .tab {
       background: #f5f5f5;
+      border-radius: 6px 6px 0 0;
+      padding: 5px 14px;
+      font-size: 12px;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
+    .tab i { font-size: 12px; }
     .site-header {
       background: #7b8ec8;
       padding: 10px 16px;
@@ -415,49 +318,26 @@
       </button>
     </div>
 
-    <!-- Chrome Browser Preview -->
-    <div id="preview" class="chrome-window">
-      <!-- Title bar dengan tab -->
-      <div class="chrome-titlebar">
-        <div class="chrome-tabs">
-          <div class="chrome-tab">
-            <!-- Favicon sederhana -->
-            <svg class="favicon" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="14" height="14" rx="2" fill="#7b8ec8"/>
-              <rect x="3" y="4" width="8" height="1.5" rx="0.75" fill="white"/>
-              <rect x="3" y="6.5" width="6" height="1.5" rx="0.75" fill="white"/>
-              <rect x="3" y="9" width="7" height="1.5" rx="0.75" fill="white"/>
-            </svg>
-            <span class="tab-title">Hasil Tes</span>
-            <span class="tab-close">✕</span>
+    <!-- Browser Preview -->
+    <div id="preview">
+      <div class="browser-bar">
+        <div class="dots">
+          <div class="dot dot-r"></div>
+          <div class="dot dot-y"></div>
+          <div class="dot dot-g"></div>
+        </div>
+        <div class="url-bar">
+          <i class="ti ti-lock"></i>
+          <span id="url-display">pusmendik.kemdikbud.go.id/tka/siswa/hasil</span>
+        </div>
+      </div>
+      <div class="page-wrapper">
+        <div class="tab-bar">
+          <div class="tab">
+            <i class="ti ti-file"></i>
+            Hasil Tes
           </div>
         </div>
-      </div>
-
-      <!-- Omnibar / toolbar -->
-      <div class="chrome-omnibar">
-        <!-- Nav buttons -->
-        <div class="chrome-nav-btn disabled"><i class="ti ti-arrow-left"></i></div>
-        <div class="chrome-nav-btn disabled"><i class="ti ti-arrow-right"></i></div>
-        <div class="chrome-nav-btn"><i class="ti ti-refresh"></i></div>
-
-        <!-- Address bar -->
-        <div class="chrome-address">
-          <i class="ti ti-lock lock-icon"></i>
-          <span class="url-text" id="url-display">pusmendik.kemdikbud.go.id/tka/siswa/hasil</span>
-          <i class="ti ti-star star-icon"></i>
-        </div>
-
-        <!-- Right controls -->
-        <div class="chrome-right-controls">
-          <div class="chrome-ctrl-btn"><i class="ti ti-puzzle"></i></div>
-          <div class="chrome-ctrl-btn"><i class="ti ti-dots"></i></div>
-          <div class="chrome-avatar">F</div>
-        </div>
-      </div>
-
-      <!-- Page content -->
-      <div class="chrome-page">
         <div class="site-header">Hasil Tes</div>
         <div class="content">
           <div class="result-title">HASIL TKA</div>
